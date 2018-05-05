@@ -1,0 +1,42 @@
+{
+  "name": "react4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode development && node server/server.js",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.1.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "react": "^16.3.2",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^16.3.2",
+    "react-tabs": "^2.2.2",
+    "reactstrap": "^6.0.1",
+    "recharts": "^1.0.0-beta.10",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2",
+    "styled-components": "^3.2.6",
+    "uuid": "^3.2.1"
+  }
+}
