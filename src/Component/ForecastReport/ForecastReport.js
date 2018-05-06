@@ -47,15 +47,18 @@ const CardSubtitleEx = styled(CardSubtitle)`
 
 const CardImgEx = styled(CardImg)`
   width: 40%;
-
+  
   @media (max-width: 576px) {
-    width: 100%
+    max-width: 100%;
+    width: auto;
   }
   @media (max-width: 768px) {
-    width: 100%;
+    max-width: 100%;
+    width: auto;
   }
   @media (max-width: 992px) {
-    width: 100%;
+    max-width: 100%;
+    width: auto;
   }
 `;
 

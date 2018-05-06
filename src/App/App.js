@@ -7,7 +7,9 @@ import { ContainerEx, TabContentEx, AlertEx, JumbotronEx, ContainerBF, TabsEx, I
 import InputField from '../Container/InputField/InputField';
 import checkPlace from '../GetApi/SearchData';
 import getWeather from '../GetApi/ForecastData';
+import CurrentPosition from '../GetApi/CurrentData';
 import DataReport from '../Container/DataReport/DataReport';
+import CurrentLocation from '../Component/CurrentLocation/CurrentLocation';
 
 class App extends Component {
   constructor() {
@@ -15,7 +17,29 @@ class App extends Component {
 
     this.state = {
       weather: {},
-      drawData: []
+      drawData: [],
+      currentPosition: {},
+      currentPositionData: {},
+      renderCurrentPlace: false
+    }
+  }
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+      this.setState({
+        currentPosition: {
+          lat, lng
+        }
+      });
+    });
+  }
+
+  async componentDidUpdate(prevProps, prevState) {
+    if (JSON.stringify(prevState) !== JSON.stringify(this.state)) {
+      await CurrentPosition(this.state.currentPosition.lat, this.state.currentPosition.lng)
+        .then(data => this.setState({ currentPositionData: data, renderCurrentPlace: true }));
     }
   }
 
@@ -47,6 +71,22 @@ class App extends Component {
   }
 
   render() {
+    const Jumbo = {
+      display: ''
+    }
+    if (this.state.renderCurrentPlace === false) {
+      Jumbo.display = <div>
+        <h4>Weather Forecast</h4>
+        <p>Enter a Place name:</p>
+        <InputField onSubmit={cityName => this.onSubmit(cityName)} />
+      </div>
+    } else {
+      Jumbo.display = <div>
+        <CurrentLocation data={this.state.currentPositionData} />
+        <h6>Check Weather in the other places</h6>
+        <InputField onSubmit={cityName => this.onSubmit(cityName)} />
+      </div>
+    }
     return (
       <ContainerEx fluid={true}>
         <ReactCSSTransitionGroup
@@ -61,9 +101,7 @@ class App extends Component {
             </ContainerBF>
             :
             <JumbotronEx key="renderBefore">
-              <h4>Weather Forecast</h4>
-              <p>Enter a Place name:</p>
-              <InputField onSubmit={cityName => this.onSubmit(cityName)} />
+              {Jumbo.display}
             </JumbotronEx>
           }
         </ReactCSSTransitionGroup>

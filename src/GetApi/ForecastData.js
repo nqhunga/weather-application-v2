@@ -20,7 +20,7 @@ function mapWeather(value) {
 
 export default async function getWeather(cityName) {
   try {
-    const response = await fetch(`/forecast/:${cityName}`);
+    const response = await fetch(`/forecast/${cityName}`);
     const results = await response.json();
     return mapWeather(results);
   } catch (e) {

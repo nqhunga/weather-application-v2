@@ -33,11 +33,13 @@ export const ContainerEx = styled(Container) `
     width: 100%;
     padding: 0;
     margin: 0 auto;
+    height: auto;
   }
   @media (max-width: 768px) {
     width: 100%;
     padding: 0 5px;
     margin: 0 auto;
+    height: auto;
   }
   @media (max-width: 992px) {
   }
