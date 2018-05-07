@@ -23,3 +23,19 @@ html {
 .active .fixed-size {
   width: 70%;
 }
+
+@media (max-width: 576px) {
+  .active .fixed-size {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .active .fixed-size {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .active .fixed-size {
+    width: 100%;
+  }
+}
