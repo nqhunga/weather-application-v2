@@ -13,8 +13,9 @@ const CardGroupEx = styled(CardGroup)`
 
 const CardEx = styled(Card)`
   font-size: 12px;
-  @media (max-width: 576px) {
-    font-size: 6px
+  @media (max-width: 575px) {
+    font-size: 6px;
+    text-align: center;
   }
   @media (max-width: 768px) {
     font-size: 8px;
@@ -49,9 +50,8 @@ const CardSubtitleEx = styled(CardSubtitle)`
 const CardImgEx = styled(CardImg)`
   width: 40%;
   
-  @media (max-width: 576px) {
-    max-width: 100%;
-    width: auto;
+  @media (max-width: 575px) {
+    width: max-content;
   }
   @media (max-width: 768px) {
     max-width: 100%;
@@ -108,7 +108,8 @@ const CardHeaderEx = styled(CardHeader)`
   padding: 10px;
   text-align: center;
 
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
+    align-items: center;
     flex-direction: column;
     padding: 5px;
   }

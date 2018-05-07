@@ -26,7 +26,7 @@ export const ContainerEx = styled(Container) `
     transition: opacity 500ms ease-in;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
     width: 100%;
     padding: 0;
     margin: 0 auto;
@@ -47,6 +47,10 @@ export const ContainerBF = styled(Container)`
   height: 100%;
   padding: 0 !important;
   overflow: hidden;
+  @media (max-width: 575px) {
+    overflow: scroll;
+  }
+  
 `;
 
 export const InputWrapper = styled.div`
