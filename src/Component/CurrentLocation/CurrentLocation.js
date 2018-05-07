@@ -6,7 +6,6 @@ const CurrentWrapper = styled.div`
   padding: 0 30px 30px 0;
   display: flex;
   flex-direction: column;
-
   h3 {
     font-size: 22px;
   }

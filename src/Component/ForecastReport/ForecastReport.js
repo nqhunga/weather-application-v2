@@ -3,6 +3,7 @@ import { Card, CardImg, CardGroup, CardBody, CardTitle, CardSubtitle, CardText, 
 import styled from 'styled-components';
 
 const CardGroupEx = styled(CardGroup)`
+  position: relative;
   margin: 0 auto;
   padding: 10px;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */

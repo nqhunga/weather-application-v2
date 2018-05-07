@@ -1,0 +1,25 @@
+html {
+  overflow: hidden;
+}
+
+#tab1.active {
+  position: relative;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#tab2.active {
+  position: relative;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#tab3.active {
+  position: relative;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.active .fixed-size {
+  width: 70%;
+}

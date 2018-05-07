@@ -6,11 +6,8 @@ import '../style/style.css';
 export const ContainerEx = styled(Container) `
   background-image: linear-gradient( #0f7677, #91a0d6 );
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+  position: relative;
+  padding: 30px 0 30px 0 !important;
   .fade-enter {
     opacity: 0.01;
   }
@@ -47,8 +44,9 @@ export const ContainerEx = styled(Container) `
 
 export const ContainerBF = styled(Container)`
   width: 100vw;
-  height: 100vh;
-  padding: 30px;
+  height: 100%;
+  padding: 0 !important;
+  overflow: hidden;
 `;
 
 export const InputWrapper = styled.div`
@@ -67,6 +65,10 @@ export const TabContentEx = styled(TabContent) `
 `;
 
 export const JumbotronEx = styled(Jumbotron) `
+  margin-bottom: 0 !important;
+  padding: 20px !important;
+  margin: 0 auto;
+  max-width: 400px;
 `;
 
 export const AlertEx = styled(Alert) `
@@ -76,4 +78,11 @@ export const AlertEx = styled(Alert) `
 
 export const JumboDisplay = styled.div`
   margin-bottom: 5px;
+`;
+
+export const Spinner = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

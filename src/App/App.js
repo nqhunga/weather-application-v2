@@ -3,7 +3,7 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Ca
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import classnames from 'classnames';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { ContainerEx, TabContentEx, AlertEx, JumbotronEx, ContainerBF, TabsEx, InputWrapper, JumboDisplay } from '../style/App.style';
+import { ContainerEx, TabContentEx, AlertEx, JumbotronEx, ContainerBF, TabsEx, InputWrapper, JumboDisplay, Spinner } from '../style/App.style';
 import InputField from '../Container/InputField/InputField';
 import checkPlace from '../GetApi/SearchData';
 import getWeather from '../GetApi/ForecastData';
@@ -95,7 +95,7 @@ class App extends Component {
     }
     return (
       <ContainerEx fluid={true}>
-        {this.state.loading ? <div><img src="https://www.createwebsite.net/wp-content/uploads/2015/09/GD.gif" /></div> :
+        {this.state.loading ? <Spinner><img src="https://www.createwebsite.net/wp-content/uploads/2015/09/GD.gif" /></Spinner> :
           <ReactCSSTransitionGroup
             transitionName="fade" transitionEnterTimeout={500} transitionLeaveTimeout={500}
           >

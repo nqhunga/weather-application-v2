@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { TabContent, NavWrapper, NavTab, DataWrapper } from './DataReport.style';
+import { TabContent, NavWrapper, NavTab, DataWrapper, TabWrapper, TabItem } from './DataReport.style';
 import CurrentReport from '../../Component/CurrentReport/CurrentReport';
 import Chart from '../../Component/Chart/Chart';
 import ForecastReport from '../../Component/ForecastReport/ForecastReport';
@@ -76,14 +76,26 @@ class DataReport extends Component {
             <NavLink active={this.state.activeTab3 ? true : false} onClick={this.Tab3}>7Days Forecast</NavLink>
           </NavItem>
         </Nav>
-        <TabContent>
-          <ReactCSSTransitionGroup transitionName="changeTab" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
-            {tab.display}
-          </ReactCSSTransitionGroup>
-        </TabContent>
+        <TabWrapper>
+          <TabItem id="tab1" className={this.state.activeTab1 ? 'active' : ''} >
+            <CurrentReport key="tab1" data={this.state.weather} />
+          </TabItem>
+          <TabItem id="tab2" className={this.state.activeTab2 ? 'active' : ''}>
+            <Chart key="tab2" data={this.state.drawData} />
+          </TabItem>
+          <TabItem id="tab3" className={this.state.activeTab3 ? 'active' : ''}>
+            <ForecastReport key="tab3" data={this.state.weather.forecast} />
+          </TabItem>
+        </TabWrapper>
       </DataWrapper>
     );
   }
 }
+
+{/* <TabContent>
+          <ReactCSSTransitionGroup transitionName="changeTab" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+            {tab.display}
+          </ReactCSSTransitionGroup>
+        </TabContent> */}
 
 export default DataReport;
