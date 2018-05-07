@@ -69,4 +69,11 @@ export const TabContentEx = styled(TabContent) `
 export const JumbotronEx = styled(Jumbotron) `
 `;
 
-export const AlertEx = styled(Alert) ``;
+export const AlertEx = styled(Alert) `
+  margin: 0 5px 0 0;
+  padding: 3px 5px 3px 5px;
+`;
+
+export const JumboDisplay = styled.div`
+  margin-bottom: 5px;
+`;
