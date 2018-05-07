@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container } from 'reactstrap';
+import { Container, NavLink } from 'reactstrap';
 
 export const TabContent = styled(Container)`
   padding-top: 15px;
@@ -74,4 +74,12 @@ export const TabItem = styled.div`
   -moz-transition: opacity 2s cubic-bezier(0.7, -0.24, 0.14, 1.78),transform 2s cubic-bezier(0.76, 1.19, 1, 1);
   -o-transition: opacity 2s cubic-bezier(0.7, -0.24, 0.14, 1.78),transform 2s cubic-bezier(0.76, 1.19, 1, 1);
   transition: opacity 2s cubic-bezier(0.7, -0.24, 0.14, 1.78),transform 2s cubic-bezier(0.76, 1.19, 1, 1);
+`;
+
+export const NavLinkEx = styled(NavLink)`
+  cursor: pointer;
+  &:hover {
+    background-color: #515966;
+    color: #f2f4f7 !important;
+  }
 `;
