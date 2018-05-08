@@ -79,7 +79,7 @@ export const TabWrapper = styled(Container)`
     height: 100%;
   }
   @media screen and (max-height: 575px) and (orientation: landscape) {
-    overflow: hidden;
+    overflow: auto;
     height: 100%;
     position: relative;
   }
