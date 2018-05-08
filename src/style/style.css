@@ -6,18 +6,23 @@ html {
   position: relative;
   opacity: 1;
   transform: translateX(0);
+  display: block;
 }
 
 #tab2.active {
   position: relative;
   opacity: 1;
   transform: translateX(0);
+  display: block;
+  
 }
 
 #tab3.active {
   position: relative;
   opacity: 1;
   transform: translateX(0);
+  display: block;
+  
 }
 
 .active .fixed-size {
@@ -28,9 +33,18 @@ html {
   color: black !important;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
   .active .fixed-size {
     width: 100%;
+  }
+  #tab1.active {
+    display: block;
+  }
+  #tab2.active {
+    display: block;
+  }
+  #tab3.active {
+    display: block;
   }
 }
 @media (max-width: 768px) {

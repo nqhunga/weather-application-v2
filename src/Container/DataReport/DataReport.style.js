@@ -56,16 +56,25 @@ export const DataWrapper = styled(Container)`
   padding: 0 20px 50px 20px;
   margin-top: 20px;
 
+  @media (max-width: 575px) {
+    position: relative;
+  }
 `;
 
 export const TabWrapper = styled(Container)`
   background-color: white;
   border: 1px solid beige;
   padding: 20px;
+  @media (max-width: 575px) {
+    position: relative;
+    overflow: scroll;
+    height: 100%;
+  }
 `;
 
 export const TabItem = styled.div`
   position: absolute;
+  display: block;
   opacity: 0;
   transform: translateY(100vh);
   left: 0;
@@ -74,6 +83,10 @@ export const TabItem = styled.div`
   -moz-transition: opacity 2s cubic-bezier(0.7, -0.24, 0.14, 1.78),transform 2s cubic-bezier(0.76, 1.19, 1, 1);
   -o-transition: opacity 2s cubic-bezier(0.7, -0.24, 0.14, 1.78),transform 2s cubic-bezier(0.76, 1.19, 1, 1);
   transition: opacity 2s cubic-bezier(0.7, -0.24, 0.14, 1.78),transform 2s cubic-bezier(0.76, 1.19, 1, 1);
+
+  @media (max-width: 575px) {
+    display: none;
+  }
 `;
 
 export const NavLinkEx = styled(NavLink)`

@@ -50,9 +50,6 @@ export const ContainerBF = styled(Container)`
   height: 100%;
   padding: 0 !important;
   overflow: hidden;
-  @media (max-width: 575px) {
-    overflow: scroll;
-  }
   
 `;
 
