@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { TabContent, NavWrapper, NavTab, DataWrapper, TabWrapper, TabItem, NavLinkEx } from './DataReport.style';
 import CurrentReport from '../../Component/CurrentReport/CurrentReport';
 import Chart from '../../Component/Chart/Chart';

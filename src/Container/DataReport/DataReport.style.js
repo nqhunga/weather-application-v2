@@ -52,10 +52,10 @@ export const NavTab = styled.li`
 
 export const DataWrapper = styled(Container)`
   background-color: #f2f7f3;
-  max-height: 100vh;
   height: 100%;
   padding: 0 20px 50px 20px;
   margin-top: 20px;
+
 `;
 
 export const TabWrapper = styled(Container)`

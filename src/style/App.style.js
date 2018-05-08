@@ -27,16 +27,19 @@ export const ContainerEx = styled(Container) `
   }
 
   @media (max-width: 575px) {
-    width: 100%;
+    width: 100vw;
     padding: 0;
     margin: 0 auto;
-    height: auto;
+    height: 100vw;
+    overflow: hidden;
+    padding-bottom: 5px !important;
   }
   @media (max-width: 768px) {
-    width: 100%;
+    width: 100vw;
     padding: 0 5px;
     margin: 0 auto;
-    height: auto;
+    height: 100vh;
+    overflow: hidden;
   }
   @media (max-width: 992px) {
   }
@@ -89,4 +92,8 @@ export const Spinner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  svg {
+    color: whitesmoke;
+  }
 `;

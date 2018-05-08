@@ -3,6 +3,8 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Ca
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import classnames from 'classnames';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/fontawesome-free-solid';
 import { ContainerEx, TabContentEx, AlertEx, JumbotronEx, ContainerBF, TabsEx, InputWrapper, JumboDisplay, Spinner } from '../style/App.style';
 import InputField from '../Container/InputField/InputField';
 import checkPlace from '../GetApi/SearchData';
@@ -46,34 +48,34 @@ class App extends Component {
   }
 
   onSubmit(cityName) {
-    checkPlace(cityName).then(data => {
-      const drawArray = [];
-      if (data.length !== 0) {
-        this.setState({
-          loading: true
-        }, () => getWeather(cityName).then(data => {
-          data.forecast.map((day) => {
-            const drawData = {
-              name: day.date,
-              avg: day.weatherData.avgtemp_c,
-              max: day.weatherData.maxtemp_c,
-              min: day.weatherData.mintemp_c
-            };
-            return drawArray.push(drawData);
+    this.setState({ loading: true }, () => {
+      checkPlace(cityName).then(data => {
+        const drawArray = [];
+        if (data.length !== 0) {
+          getWeather(cityName).then(data => {
+            data.forecast.map((day) => {
+              const drawData = {
+                name: day.date,
+                avg: day.weatherData.avgtemp_c,
+                max: day.weatherData.maxtemp_c,
+                min: day.weatherData.mintemp_c
+              };
+              return drawArray.push(drawData);
+            });
+            this.setState({
+              loading: false,
+              weather: data,
+              drawData: drawArray,
+              isErr: '',
+            });
           });
+        } else {
           this.setState({
-            loading: false,
-            weather: data,
-            drawData: drawArray,
-            isErr: '',
+            isErr: 'Bad Request'
           });
-        }));
-      } else {
-        this.setState({
-          isErr: 'Bad Request'
-        });
-      }
-    });
+        }
+      });
+    })
   }
 
   render() {
@@ -95,7 +97,7 @@ class App extends Component {
     }
     return (
       <ContainerEx fluid={true}>
-        {this.state.loading ? <Spinner><img src="https://www.createwebsite.net/wp-content/uploads/2015/09/GD.gif" /></Spinner> :
+        {this.state.loading ? <Spinner><FontAwesomeIcon icon={faSpinner} size="6x" spin pulse /></Spinner> :
           <ReactCSSTransitionGroup
             transitionName="fade" transitionEnterTimeout={500} transitionLeaveTimeout={500}
           >

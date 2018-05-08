@@ -11,23 +11,34 @@ const ChartWrapper = styled.div`
   box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
   width: 100%;
 
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
     width: 100%;
-    
+    .recharts-wrapper {
+      width: 100% !important;
+      height: auto;
+    }
+
     .recharts-surface {
-      width: 70%;
+      width: 100%;
     }
     .recharts-legend-wrapper {
-      width: 70% !important;
+      width: 100% !important;
     }
   }
+
   @media (max-width: 768px) {
     width: 100%;
-    .recharts-surface {
-      width: 70%;
+    .recharts-wrapper {
+      width: 100% !important;
+      height: auto;
     }
+
+    .recharts-surface {
+      width: 100%;
+    }
+
     .recharts-legend-wrapper {
-      width: 70% !important;
+      width: 100% !important;
     }
   }
   @media (max-width: 992px) {
@@ -35,7 +46,21 @@ const ChartWrapper = styled.div`
   }
 `;
 
-const ChartHeader = styled.h3``;
+const ChartHeader = styled.h3`
+  @media (max-width: 575px) {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  @media (max-width: 992px) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+`;
 
 const Chart = (props) => {
   return (
