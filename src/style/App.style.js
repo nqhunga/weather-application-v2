@@ -59,6 +59,11 @@ export const InputWrapper = styled.div`
   justify-content: flex-end;
   width: 40%;
   margin-left: 60%;
+
+  @media (max-width: 575px) {
+    width: 60%;
+    margin-left: 40%;
+  }
 `;
 
 export const TabContentEx = styled(TabContent) `

@@ -65,9 +65,11 @@ export const TabWrapper = styled(Container)`
   background-color: white;
   border: 1px solid beige;
   padding: 20px;
+  overflow: auto;
+  height: 100%;  
   @media (max-width: 575px) {
     position: relative;
-    overflow: scroll;
+    overflow: auto;
     height: 100%;
   }
 `;
