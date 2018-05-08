@@ -89,6 +89,9 @@ export const TabItem = styled.div`
   @media (max-width: 575px) {
     display: none;
   }
+  @media screen and (max-height: 575px) and (orientation: landscape) {
+    display: none;
+  }
 `;
 
 export const NavLinkEx = styled(NavLink)`

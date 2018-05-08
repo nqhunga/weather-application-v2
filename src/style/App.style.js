@@ -8,7 +8,7 @@ export const ContainerEx = styled(Container) `
   height: 100vh;
   position: relative;
   padding: 30px 0 30px 0 !important;
-  overflow: auto;
+  overflow: hidden;
   
   .fade-enter {
     opacity: 0.01;
@@ -28,6 +28,10 @@ export const ContainerEx = styled(Container) `
     transition: opacity 500ms ease-in;
   }
 
+  @media screen and (max-height: 575px) and (orientation: landscape) {
+    overflow: auto;
+  }
+
   @media (max-width: 575px) {
     width: 100vw;
     padding: 50px 0 10px !important;
@@ -41,7 +45,6 @@ export const ContainerEx = styled(Container) `
     padding: 0 5px;
     margin: 0 auto;
     height: 100vh;
-    overflow: auto;
   }
   @media (max-width: 992px) {
   }
