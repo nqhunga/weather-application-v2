@@ -71,7 +71,8 @@ class App extends Component {
           });
         } else {
           this.setState({
-            isErr: 'Bad Request'
+            isErr: 'Bad Request',
+            loading: false
           });
         }
       });
