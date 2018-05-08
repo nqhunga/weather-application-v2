@@ -37,8 +37,8 @@ const CardSubtitleEx = styled(CardSubtitle)`
     font-size: 8px;
     margin-top: 1.5px;
   }
-  @media (max-width: 768px) {
-    font-size: 10px;
+  @media (max-width: 767px) {
+    font-size: 9px;
     margin-top: 3px;
   }
   @media (max-width: 992px) {
@@ -53,7 +53,7 @@ const CardImgEx = styled(CardImg)`
   @media (max-width: 575px) {
     width: max-content;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     max-width: 100%;
     width: auto;
   }
@@ -79,13 +79,13 @@ const CardBodyEx = styled(CardBody)`
     font-size: 10px;
   }
 }
-@media (max-width: 768px) {
-  padding: 5px;
+@media (max-width: 767px) {
+  padding: 3px;
   p {
-    font-size: 8px
+    font-size: 9px
   }
   h5 {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 @media (max-width: 992px) {
