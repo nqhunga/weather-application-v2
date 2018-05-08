@@ -28,7 +28,7 @@ export const ContainerEx = styled(Container) `
 
   @media (max-width: 575px) {
     width: 100vw;
-    padding: 0;
+    padding: 50px 0 10px !important;
     margin: 0 auto;
     height: 100vw;
     overflow: hidden;
