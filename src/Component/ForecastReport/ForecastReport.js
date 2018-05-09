@@ -3,6 +3,7 @@ import { Card, CardImg, CardGroup, CardBody, CardTitle, CardSubtitle, CardText, 
 import styled from 'styled-components';
 
 const CardGroupEx = styled(CardGroup)`
+  position: relative;
   margin: 0 auto;
   padding: 10px;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
@@ -12,8 +13,9 @@ const CardGroupEx = styled(CardGroup)`
 
 const CardEx = styled(Card)`
   font-size: 12px;
-  @media (max-width: 576px) {
-    font-size: 6px
+  @media (max-width: 575px) {
+    font-size: 6px;
+    text-align: center;
   }
   @media (max-width: 768px) {
     font-size: 8px;
@@ -47,15 +49,17 @@ const CardSubtitleEx = styled(CardSubtitle)`
 
 const CardImgEx = styled(CardImg)`
   width: 40%;
-
-  @media (max-width: 576px) {
-    width: 100%
+  
+  @media (max-width: 575px) {
+    width: max-content;
   }
   @media (max-width: 768px) {
-    width: 100%;
+    max-width: 100%;
+    width: auto;
   }
   @media (max-width: 992px) {
-    width: 100%;
+    max-width: 100%;
+    width: auto;
   }
 `;
 
@@ -104,7 +108,8 @@ const CardHeaderEx = styled(CardHeader)`
   padding: 10px;
   text-align: center;
 
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
+    align-items: center;
     flex-direction: column;
     padding: 5px;
   }

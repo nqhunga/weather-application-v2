@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { Container } from 'reactstrap';
+import { Container, NavLink } from 'reactstrap';
 
 export const TabContent = styled(Container)`
   padding-top: 15px;
   padding-bottom: 5px;
   background-color: white;
   border: 0.5px solid #dee2e6;
+
   .changeTab-enter {
     opacity: 0;
     transform:   translate(-250px,0);
@@ -51,8 +52,52 @@ export const NavTab = styled.li`
 
 export const DataWrapper = styled(Container)`
   background-color: #f2f7f3;
-  max-height: 100vh;
-  height: auto;
+  height: 100%;
   padding: 0 20px 50px 20px;
   margin-top: 20px;
+
+  @media (max-width: 575px) {
+    position: relative;
+  }
+`;
+
+export const TabWrapper = styled(Container)`
+  background-color: white;
+  border: 1px solid beige;
+  padding: 20px;
+  overflow: auto;
+  height: 100%;  
+  @media (max-width: 575px) {
+    position: relative;
+    overflow: auto;
+    height: 100%;
+  }
+`;
+
+export const TabItem = styled.div`
+  position: absolute;
+  display: block;
+  opacity: 0;
+  transform: translateY(100vh);
+  left: 0;
+  right: 0;
+  -webkit-transition: opacity 2s cubic-bezier(0.7, -0.24, 0.14, 1.78),transform 2s cubic-bezier(0.76, 1.19, 1, 1);
+  -moz-transition: opacity 2s cubic-bezier(0.7, -0.24, 0.14, 1.78),transform 2s cubic-bezier(0.76, 1.19, 1, 1);
+  -o-transition: opacity 2s cubic-bezier(0.7, -0.24, 0.14, 1.78),transform 2s cubic-bezier(0.76, 1.19, 1, 1);
+  transition: opacity 2s cubic-bezier(0.7, -0.24, 0.14, 1.78),transform 2s cubic-bezier(0.76, 1.19, 1, 1);
+
+  @media (max-width: 575px) {
+    display: none;
+  }
+  @media screen and (max-height: 575px) and (orientation: landscape) {
+    display: none;
+  }
+`;
+
+export const NavLinkEx = styled(NavLink)`
+  cursor: pointer;
+  &:hover {
+    background-color: #515966;
+    color: #f2f4f7 !important;
+  }
 `;

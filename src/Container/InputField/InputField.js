@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
 
+const InputWrapper = styled(InputGroupAddon)`
+`;
 class InputField extends Component {
   constructor() {
     super();
@@ -22,10 +24,10 @@ class InputField extends Component {
   
   render() {
     return (
-      <InputGroupAddon addonType="append">
+      <InputWrapper addonType="append">
         <Input onChange={e => this.onChange(e)}/>
         <Button onClick={e => this.onSubmit(e)}>Submit</Button>
-      </InputGroupAddon>
+      </InputWrapper>
     );
   }
 }

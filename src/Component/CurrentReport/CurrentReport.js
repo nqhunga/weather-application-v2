@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CurrentWrapper = styled.div`
-  width: 70%;
+  position: relative;
+  width: 100%;
   margin: 0 auto;
   padding: 30px;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
@@ -40,7 +41,7 @@ const CurrentIcon = styled.img``;
 const CurrentReport = (props) => {
   const CurrentData = props.data;
   return (
-    <CurrentWrapper>
+    <CurrentWrapper className="fixed-size">
         <h3>{CurrentData.location.name}</h3>
         <p className="lead">Region: {CurrentData.location.region} - Country: {CurrentData.location.country}</p>
         <p className="lead">Local Time: {CurrentData.location.localtime}</p>

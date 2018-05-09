@@ -21,8 +21,12 @@ app.get('/check/:cityName', (req, res) => {
       const result = JSON.parse(data);
       res.status(200).send(result);
     })
-    .catch((err) => {
-      res.status(400).send(err);
-    });
+});
+app.get('/current/:lat/:lng', (req, res) => {
+  request(`${WEATHER_FORECAST_URL}key=${process.env.SECRET_KEY}&q=${req.params.lat},${req.params.lng}`)
+    .then((data) => {
+      const result = JSON.parse(data);
+      res.status(200).send(result);
+    })
 });
 app.listen(port, () => console.log('Example app listening on port',port,'! '));
