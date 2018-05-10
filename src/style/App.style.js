@@ -9,7 +9,7 @@ export const ContainerEx = styled(Container) `
   position: relative;
   padding: 30px 0 30px 0 !important;
   overflow: hidden;
-  
+
   .fade-enter {
     opacity: 0.01;
   }
@@ -34,12 +34,12 @@ export const ContainerEx = styled(Container) `
 
   @media (max-width: 575px) {
     width: 100vw;
-    padding: 50px 0 10px !important;
+    padding: 30px 0 5px 0!important;
     margin: 0 auto;
-    height: 100vw;
+    height: 100vh;
     overflow: auto;
-    padding-bottom: 5px !important;
   }
+
   @media (max-width: 768px) {
     width: 100vw;
     padding: 0 5px;
@@ -53,9 +53,9 @@ export const ContainerEx = styled(Container) `
 export const ContainerBF = styled(Container)`
   width: 100vw;
   height: 100%;
-  padding: 0 !important;
+  padding: 0 0 10px 0 !important;
   overflow: hidden;
-  
+
 `;
 
 export const InputWrapper = styled.div`
@@ -95,7 +95,10 @@ export const JumboDisplay = styled.div`
 `;
 
 export const Spinner = styled.div`
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;

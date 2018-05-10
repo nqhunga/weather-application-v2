@@ -53,24 +53,35 @@ export const NavTab = styled.li`
 export const DataWrapper = styled(Container)`
   background-color: #f2f7f3;
   height: 100%;
-  padding: 0 20px 50px 20px;
+  padding: 0 20px 100px 20px;
   margin-top: 20px;
 
   @media (max-width: 575px) {
     position: relative;
+    padding: 0 20px 100px 20px !important;
   }
 `;
 
 export const TabWrapper = styled(Container)`
   background-color: white;
   border: 1px solid beige;
-  padding: 20px;
-  overflow: auto;
+  padding: 15px;
+  overflow: hidden;
   height: 100%;  
   @media (max-width: 575px) {
     position: relative;
     overflow: auto;
     height: 100%;
+  }
+  @media (max-width: 767px) {
+    position: relative;
+    overflow: auto;
+    height: 100%;
+  }
+  @media screen and (max-height: 575px) and (orientation: landscape) {
+    overflow: auto;
+    height: 100%;
+    position: relative;
   }
 `;
 
