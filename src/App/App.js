@@ -91,9 +91,9 @@ class App extends Component {
       </JumboDisplay>
     } else {
       Jumbo.display = <JumboDisplay>
-        <CurrentLocation data={this.state.currentPositionData} />
         <h6>Check Weather at other places</h6>
         <InputField onSubmit={cityName => this.onSubmit(cityName)} />
+        <CurrentLocation data={this.state.currentPositionData} />
       </JumboDisplay>
     }
     return (

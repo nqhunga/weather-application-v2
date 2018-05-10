@@ -29,4 +29,4 @@ app.get('/current/:lat/:lng', (req, res) => {
       res.status(200).send(result);
     })
 });
-app.listen(port, () => console.log('Example app listening on port',port,'! '));
+app.listen(port, () => console.log('Example app listening on port', port, '! '));
